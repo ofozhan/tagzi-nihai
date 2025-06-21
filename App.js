@@ -1,18 +1,18 @@
-import React, { useEffect, useCallback } from 'react';
-import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
 import { Ionicons } from '@expo/vector-icons';
-import * as Notifications from 'expo-notifications';
-import { Platform, View, Text, StyleSheet, useColorScheme } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { useFonts } from 'expo-font';
+import * as Notifications from 'expo-notifications';
 import * as SplashScreen from 'expo-splash-screen';
+import { StatusBar } from 'expo-status-bar';
+import { useCallback, useEffect } from 'react';
+import { StyleSheet, Text, useColorScheme, View } from 'react-native';
 
-import TodayScreen from './screens/TodayScreen';
-import HistoryScreen from './screens/HistoryScreen';
 import DayDetailScreen from './screens/DayDetailScreen';
-import { lightColors, darkColors } from './theme';
+import HistoryScreen from './screens/HistoryScreen';
+import TodayScreen from './screens/TodayScreen';
+import { darkColors, lightColors } from './theme';
 
 SplashScreen.preventAutoHideAsync();
 
