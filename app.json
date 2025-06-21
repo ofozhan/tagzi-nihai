@@ -1,23 +1,28 @@
 {
   "expo": {
     "name": "Tagzi",
-    "slug": "taggzii",
+    "slug": "taggzii2",
     "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "sdkVersion": "52.0.0",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash-logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#FFFFFF",
       "dark": {
+        "image": "./assets.png",
         "backgroundColor": "#000000"
       }
     },
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.ofozhan.tagzi",
-      "buildNumber": "5"
+      "buildNumber": "5",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
