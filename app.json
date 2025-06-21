@@ -5,7 +5,7 @@
     "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "sdkVersion": "52.0.0",
+    "sdkVersion": "51.0.0",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash-logo.png",
@@ -34,19 +34,14 @@
     },
     "extra": {
       "eas": {
-        "projectId": "24a62693-01b8-4567-a8b5-0e0825d24bfd"
+        "projectId": "8f3c0450-e500-4301-9116-e339d69070e2"
       }
     },
     "updates": {
-      "url": "https://u.expo.dev/24a62693-01b8-4567-a8b5-0e0825d24bfd"
+      "url": "https://u.expo.dev/8f3c0450-e500-4301-9116-e339d69070e2"
     },
     "runtimeVersion": {
       "policy": "appVersion"
-    },
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ]
+    }
   }
 }

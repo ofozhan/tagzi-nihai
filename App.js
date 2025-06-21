@@ -1,18 +1,18 @@
-import { Ionicons } from '@expo/vector-icons';
+import React, { useEffect, useCallback } from 'react';
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useFonts } from 'expo-font';
+import { Ionicons } from '@expo/vector-icons';
 import * as Notifications from 'expo-notifications';
-import * as SplashScreen from 'expo-splash-screen';
+import { Platform, View, Text, StyleSheet, useColorScheme } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useCallback, useEffect } from 'react';
-import { StyleSheet, Text, useColorScheme, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 
-import DayDetailScreen from './screens/DayDetailScreen';
-import HistoryScreen from './screens/HistoryScreen';
 import TodayScreen from './screens/TodayScreen';
-import { darkColors, lightColors } from './theme';
+import HistoryScreen from './screens/HistoryScreen';
+import DayDetailScreen from './screens/DayDetailScreen';
+import { lightColors, darkColors } from './theme';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -66,14 +66,24 @@ export default function App() {
   });
 
   useEffect(() => {
-    // ... bildirim kodu ...
-  }, []);
-
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded || fontError) {
-      await SplashScreen.hideAsync();
+    async function prepare() {
+      try {
+        if (fontsLoaded || fontError) {
+          await SplashScreen.hideAsync();
+        }
+      } catch (e) {
+        console.warn(e);
+      }
     }
+    prepare();
   }, [fontsLoaded, fontError]);
+
+  useEffect(() => {
+    const setupNotifications = async () => {
+      // Bildirim Kodu...
+    };
+    setupNotifications();
+  }, []);
 
   if (!fontsLoaded && !fontError) {
     return null;
